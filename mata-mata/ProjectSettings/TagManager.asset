@@ -41,3 +41,15 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Background
+    uniqueID: 1669002267
+    locked: 0
+  - name: chao
+    uniqueID: 716568753
+    locked: 0
+  - name: player
+    uniqueID: 3292468907
+    locked: 0
+  - name: camera
+    uniqueID: 593589375
+    locked: 0
