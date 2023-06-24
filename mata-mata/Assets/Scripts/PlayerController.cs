@@ -48,7 +48,7 @@ public class PlayerController : MonoBehaviour
 
             // Accelerate the player while run direction is pressed
             // BUT don't allow player to run faster than the max speed in any direction
-            //_playerRigidbody2D.velocity = _playerRigidbody2D.velocity(_playerRigidbody2D.MovePosition + (moveInput * _playerSpeed * Time.deltaTime), maxSpeed);
+           // _playerRigidbody2D.velocity = _playerRigidbody2D.velocity(_playerRigidbody2D.MovePosition + (moveInput * _playerSpeed * Time.deltaTime), maxSpeed);
             _playerRigidbody2D.MovePosition(_playerRigidbody2D.position + moveInput * _playerSpeed * Time.deltaTime);
             // Control whether looking left or right
             if(moveInput.x > 0) {
@@ -67,4 +67,7 @@ public class PlayerController : MonoBehaviour
         
     }
 
+    void OnFire(){
+        _playerAnimator.SetTrigger("swordAttack");
+    }
 }
