@@ -18,15 +18,21 @@ public class PlayerController : MonoBehaviour
     public float maxSpeed = 8f;
     public float idleFriction = 0.9f;   
     //private Vector2 _playerDirection;//determina os eixos 
+
     public GameObject swordHitBox;
+    
     Vector2 moveInput = Vector2.zero;
     SpriteRenderer spriteRenderer;
+    bool canMove = true;
 
+    Collider2D swordCollider;
     // Start is called before the first frame update
     void Start(){
         _playerRigidbody2D = GetComponent<Rigidbody2D>();
         _playerAnimator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        swordCollider = swordHitBox.GetComponent<Collider2D>();
+        
     }
 
     // Update is called once per frame
@@ -43,7 +49,7 @@ public class PlayerController : MonoBehaviour
     }
 
     void FixedUpdate() {
-        if(moveInput != Vector2.zero) {
+        if(canMove == true && moveInput != Vector2.zero) {
             // Move animation and add velocity
 
             // Accelerate the player while run direction is pressed
@@ -69,5 +75,13 @@ public class PlayerController : MonoBehaviour
 
     void OnFire(){
         _playerAnimator.SetTrigger("swordAttack");
+    }
+
+    void LockMovement(){
+        canMove = false;
+    }
+
+    void UnlockMovement(){
+        canMove = true;
     }
 }
