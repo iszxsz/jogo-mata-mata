@@ -456,13 +456,13 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 690487641}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.3315189, y: 0}
+  m_Offset: {x: -0.3425908, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -473,7 +473,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.7369623, y: 1}
+  m_Size: {x: 0.7148185, y: 1}
   m_EdgeRadius: 0
 --- !u!114 &690487644
 MonoBehaviour:
@@ -10281,7 +10281,7 @@ GameObject:
   - component: {fileID: 1622914440}
   m_Layer: 0
   m_Name: slime
-  m_TagString: Respawn
+  m_TagString: slime
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10451,10 +10451,10 @@ GameObject:
   - component: {fileID: 2047523816}
   - component: {fileID: 2047523815}
   - component: {fileID: 2047523814}
-  - component: {fileID: 2047523818}
   - component: {fileID: 2047523819}
   - component: {fileID: 2047523820}
   - component: {fileID: 2047523821}
+  - component: {fileID: 2047523822}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -10474,11 +10474,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93983f0a1772a0a44ba83271471fdf28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerPosition: 0
   _playerSpeed: 5
   maxSpeed: 8
   idleFriction: 0.9
-  swordHitBox: {fileID: 690487641}
 --- !u!50 &2047523815
 Rigidbody2D:
   serializedVersion: 4
@@ -10568,22 +10566,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!70 &2047523818
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2047523813}
-  m_Enabled: 0
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.011497498, y: 0.04216385}
-  m_Size: {x: 0.75883484, y: 1.2281723}
-  m_Direction: 0
 --- !u!61 &2047523819
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -10661,3 +10643,19 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &2047523822
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2047523813}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b2a2f5ab2edae1489d62117d679f60b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  swordCollider: {fileID: 0}
+  swordDamage: 1
+  faceRight: {x: 1, y: -0.9, z: 0}
+  faceLeft: {x: -1, y: -0.9, z: 0}
