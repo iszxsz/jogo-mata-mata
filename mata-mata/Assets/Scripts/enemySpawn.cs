@@ -26,8 +26,11 @@ public class enemySpawn : MonoBehaviour
         _timeUntilSpawn -= Time.deltaTime;
 
         if(_timeUntilSpawn <= 0){
-            Instantiate(_slime, transform.position, Quaternion.identity);
-            SetTimeUntilSpawn();
+            if (_slime != null) // Verifica se o objeto _slime ainda existe
+            {
+                Instantiate(_slime, transform.position, Quaternion.identity);
+                SetTimeUntilSpawn();
+            }
         }
     }
     private void SetTimeUntilSpawn(){

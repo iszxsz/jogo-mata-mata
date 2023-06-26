@@ -18,7 +18,8 @@ public class Slime : MonoBehaviour
             _health = value;
 
             if(_health <= 0){
-                animator.SetBool("isAlive", false);
+                animator.SetBool("isAlive", false); 
+                DestroySlime();
             }
         }
         get{
@@ -27,7 +28,7 @@ public class Slime : MonoBehaviour
     
     }
 
-    public float _health = 3;
+    public float _health = 1;
 
     public void Start(){
         animator = GetComponent<Animator>();
@@ -41,5 +42,12 @@ public class Slime : MonoBehaviour
     }
     // Start is called before the first frame update
 
+    void DestroySlime()
+    {
+        // Remove todas as referências ao slime aqui
+        // Exemplo: remover da lista de slimes gerenciados, interromper corrotinas relacionadas, etc.
+        // E, em seguida, destruir o objeto do slime
+        Destroy(gameObject);
+    }
     
 }
