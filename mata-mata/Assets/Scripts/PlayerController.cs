@@ -67,6 +67,11 @@ public class PlayerController : MonoBehaviour
         _playerAnimator.SetTrigger("swordAttack");
     }
 
+    void OnDie()
+    {
+        _playerAnimator.SetTrigger("death");
+    }
+
     void LockMovement()
     {
         _canMove = false;
